@@ -8,6 +8,12 @@ public class main {
 
 		for(int i = 1000000; i>0; i--) {
 			int[] xs =  testArray();
+					
+			System.out.println("\r\nThe array is:");
+			outputArray(xs);
+			
+			SelectionSort s = new SelectionSort();
+			xs = s.sort(xs);
 			outputArray(xs);
 		}
 		
@@ -24,12 +30,11 @@ public class main {
 	
 
 	public static void outputArray(int[] xs) {
-		System.out.print("The test-array is: \r\n[");
-		System.out.print(xs[0]);
+		String array = "["+(xs[0]);
 		for(int i = 1; i<xs.length; i++) {
-			System.out.print(", "+xs[i]);
+			array = array+", "+xs[i];
 		}
-		System.out.println("]\r\n");
+		System.out.println(array+"]");
 	}
 
 }
