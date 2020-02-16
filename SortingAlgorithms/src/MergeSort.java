@@ -14,12 +14,12 @@ public class MergeSort extends Sort{
 			sortRecursion(xs, index1, halfpoint);
 			sortRecursion(xs, halfpoint+1, index2);
 			
-			merge(xs, index1, halfpoint, index2);
+			mergeInPlace(xs, index1, halfpoint, index2);
 		}
 	}
 
-	private void merge(int[] xs, int index1, int halfpoint, int index2) {
-		// TODO Auto-generated method stub
+/*	Unnecessary now
+ * private void merge(int[] xs, int index1, int halfpoint, int index2) {
 		int[] left = new int[(halfpoint-index1)+1];
 		int[] right = new int[index2-halfpoint];
 		
@@ -33,6 +33,7 @@ public class MergeSort extends Sort{
 		int indexLeft = 0;
 		int indexRight = 0;
 		int index = index1;
+		
 		while(index<=index2) {
 			if(indexLeft>=left.length) {
 				xs[index] = right[indexRight];
@@ -40,6 +41,7 @@ public class MergeSort extends Sort{
 			}else if(indexRight>=right.length) {
 				xs[index] = left[indexLeft];
 				indexLeft++;
+				
 			}else {
 				if(left[indexLeft]<=right[indexRight]) {
 					xs[index] = left[indexLeft];
@@ -49,7 +51,24 @@ public class MergeSort extends Sort{
 					indexRight++;
 				}
 			}
+			
 			index++;
+		}
+	}	*/
+	
+
+	private void mergeInPlace(int[] xs, int index1, int halfpoint, int index2) {
+		
+		while((index1<=index2)&&(index1<=halfpoint)&&(halfpoint<index2)) {
+			if(xs[index1]<=xs[halfpoint+1]) {
+				index1++;
+			}else {
+				for (int i = halfpoint+1; i > index1; i--) {
+					swap(i, i-1, xs);
+				}
+				index1++;
+				halfpoint++;
+			}
 		}
 	}
 
