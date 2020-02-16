@@ -18,7 +18,7 @@ public class MergeSort extends Sort{
 		}
 	}
 
-/*	Unnecessary now
+/*	Unnecessary now since mergeInplace is kinda better
  * private void merge(int[] xs, int index1, int halfpoint, int index2) {
 		int[] left = new int[(halfpoint-index1)+1];
 		int[] right = new int[index2-halfpoint];
