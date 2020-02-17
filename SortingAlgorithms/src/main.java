@@ -6,7 +6,7 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		int runs = 1000000;//how many test-runs shall be execute
+		int runs = 1000000;//how many test-runs shall be executed
 		int arrayMaxSize = 50; //The arrays will have random length between [1,arrayMaxSize]
 		int arrayMaxValue = 100; //The arrays will contain random values between [1,arrayValue[
 
